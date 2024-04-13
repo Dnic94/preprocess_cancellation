@@ -41,8 +41,8 @@ class PreprocessCancellation(Script):
         self.executable = os.path.join(self.executablePath, self.executableName)
 
     def getSettingDataString(self):
-        twobackslashes = "//"
-        fourbackslashes = "////"
+        twobackslashes = "\\"
+        fourbackslashes = "\\\\"
         return f"""\u007b
             "name": "Preprocess Cancellation",
             "key": "PreprocessCancellation",
