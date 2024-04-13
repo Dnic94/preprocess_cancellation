@@ -41,6 +41,8 @@ class PreprocessCancellation(Script):
         self.executable = os.path.join(self.executablePath, self.executableName)
 
     def getSettingDataString(self):
+        twobackslashes = "\\"
+        fourbackslashes = "\\\\"
         return f"""\u007b
             "name": "Preprocess Cancellation",
             "key": "PreprocessCancellation",
@@ -53,7 +55,7 @@ class PreprocessCancellation(Script):
                     "label": "Path to preprocess_cancellation",
                     "description": "Full path to the preprocess_cancellation executable.",
                     "type": "str",
-                    "default_value": "{self.executable}"
+                    "default_value": "{self.executable.replace(twobackslashes, fourbackslashes)}"
                 \u007d,
                 "timeout":
                 \u007b
